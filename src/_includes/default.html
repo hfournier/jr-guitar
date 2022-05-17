@@ -7,7 +7,7 @@
     endif %} {% include "./partials/footer.html" %}
     <!-- Needed only if you are using Netlify Identity feature -->
     {% if path == "home" %}
-    <script>
+    <!-- <script>
       if (window.netlifyIdentity) {
         window.netlifyIdentity.on("init", (user) => {
           if (!user) {
@@ -17,7 +17,7 @@
           }
         });
       }
-    </script>
+    </script> -->
     {% endif %}
   </body>
 </html>
