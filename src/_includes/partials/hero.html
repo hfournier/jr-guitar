@@ -1,0 +1,29 @@
+<section class="relative mx-auto max-w-5xl">
+  <img
+    class="m-0 h-full w-full"
+    src="static/img/hero.jpg"
+    alt="Close up of hands playing guitar"
+  />
+  <div
+    class="sm:absolute sm:inset-0 sm:w-3/4 sm:bg-gradient-to-r sm:from-black"
+  ></div>
+  <div
+    class="left-1/10 top-1/4 bg-yellow-50 p-8 sm:absolute sm:bg-transparent sm:p-0"
+  >
+    <h1
+      class="text-left text-4xl font-bold sm:text-5xl sm:text-yellow-50 lg:text-6xl"
+    >
+      Guitars. Better.
+    </h1>
+    <p class="mt-6 sm:text-yellow-50 md:text-lg lg:text-xl">
+      Does your guitar need some TLC?<br />Or maybe you want a custom build?<br />Either
+      way, I've got you covered.<br />I'll even teach you how to play it.
+    </p>
+    <div class="mt-6">
+      <a href="/contact" class="btn btn-yellow font-bold"> Contact me </a>
+    </div>
+  </div>
+</section>
+<main class="mx-auto max-w-5xl bg-yellow-50 px-4 pt-8 pb-4 sm:pt-12">
+  {{ content | safe }}
+</main>

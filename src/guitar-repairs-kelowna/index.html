@@ -1,0 +1,198 @@
+---
+layout: default
+title: Guitar Repairs Kelowna | JR Guitar | Kelowna, BC
+description: JR Guitar repairs acoustic guitar, electric guitar, bass guitar, banjo, mandolin or violin in Kelowna, BC
+path: repairs
+---
+
+<section class="prose max-w-full">
+  <h1>Guitar Repairs in Kelowna</h1>
+  <p>
+    JR Guitar is the instrument repair shop of choice for many professional
+    musicians in Kelowna, as well as other guitar stores, pawn shops and music
+    schools in town. They trust Jim to take care of their difficult repair and
+    fret jobs... and you can too!
+  </p>
+  <div class="flex justify-center">
+    <blockquote class="border-yellow-800 text-yellow-800">
+      JR Guitar - trusted by professional musicians in Kelowna since 1994
+    </blockquote>
+  </div>
+  <p>
+    What's keeping you from enjoying your acoustic guitar, electric guitar, bass
+    guitar, banjo, mandolin or violin?
+  </p>
+  <div class="flex flex-wrap items-center justify-evenly md:mt-4">
+    <ul class="md:m-0">
+      <li>Is it difficult too play?</li>
+      <li>It won't stay in tune?</li>
+      <li>Do the frets need some cleaning up?</li>
+      <li>Does it need a complete fret job?</li>
+      <li>Are there cracks in the neck or body?</li>
+      <li>Is the acoustic bridge lifting?</li>
+      <li>Having problems with the pickups?</li>
+      <li>Does it buzz like a sitar?</li>
+      <li>Is it just plain broken?</li>
+    </ul>
+    <img
+      class="h-80 rounded-md md:m-0"
+      src="/static/img/jr-guitar-repair-shop.jpg"
+      alt="JR Guitar repair shop"
+    />
+  </div>
+  <h2>Fret Jobs</h2>
+  <h2>Set-ups</h2>
+  <p>
+    Any guitar you buy will play and sound better with a professional set-up.
+    Many guitars people thought were "unplayable" are often salvageable.
+  </p>
+  <h2>Restoration</h2>
+  <p>
+    Jim has resurrected instruments as varied as a 100 year old mandolin, a 1951
+    Gibson and a 1920's banjo. He salvaged an acoustic guitar after a car had
+    driven over it. He was able to resell it to one of Kelowna's most
+    experienced musicians, who was blown away by its amazing tone!
+  </p>
+  <p>
+    We are not promising miracles, but it is surprising what skill, experience,
+    the right tools, and a <strong>ton of patience</strong> can accomplish!
+  </p>
+  <h2>Modifications</h2>
+  <p>
+    Jim also custom builds electric guitars and can modify yours to be the
+    instrument you've always dreamed it could be.
+  </p>
+  <div class="flex flex-wrap items-center justify-evenly md:mt-10">
+    <img
+      class="rounded-md"
+      src="/static/img/jim-cream-guitar.jpg"
+      alt="Jim Rhindress holding a cream-coloured electric guitar with many other guitars hanging on the wall behind him"
+    />
+    <div class="text-center md:w-5/12 md:text-2xl">
+      Stop by his smoke-free shop and let Jim make your guitar play better than
+      ever.
+    </div>
+  </div>
+</section>
+<section class="prose mt-8 max-w-full">
+  <h2>Repair Costs</h2>
+  <div class="space-y-2" x-data="{ activePanel: null }">
+    {% for item in repair_costs.items %}
+    <div
+      class="mb-1 rounded border border-yellow-800 px-4 py-2"
+      role="region"
+      x-data="{
+        id: {{ loop.index }},
+        get expanded() {
+          return this.activePanel === this.id
+        },
+        set expanded(value) {
+          this.activePanel = value ? this.id : null
+        }
+      }"
+    >
+      <button
+        class="flex w-full cursor-pointer items-center justify-between focus:text-yellow-700 focus:outline-none"
+        tabindex="0"
+        role="button"
+        @click="expanded = !expanded"
+      >
+        <h3 class="tab-heading my-0" :class="{ '!text-yellow-700': expanded }">
+          {{ item.category }}
+        </h3>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-8 w-8 flex-shrink-0 origin-center transform text-yellow-800 transition-transform duration-500"
+          fill="none"
+          viewBox="0 0 24 24"
+          aria-label="Expand or Collapse this section"
+          :aria-expanded="expanded"
+          stroke="currentColor"
+          :class="expanded ? '-rotate-180' : ''"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="3"
+            d="M19 9l-7 7-7-7"
+          />
+        </svg>
+      </button>
+      <div x-show="expanded" x-collapse x-cloak>
+        {% if item.description %}
+        <p>{{ item.description }}</p>
+        {% endif %} {% if item.items %}
+        <ul>
+          {% for subitem in item.items %}
+          <li>
+            {% if subitem.sub_category %}
+            <h4>{{ subitem.sub_category }}</h4>
+            <p>
+              {{ subitem.description }}{% if subitem.price %}
+              <strong>{{ subitem.price }}</strong>{% endif %}
+            </p>
+            <ul>
+              {% for subsubitem in subitem.items %}
+              <li>
+                {% if subsubitem.description %} {{ subsubitem.description }}: {%
+                endif %}<strong>{{ subsubitem.price }}</strong>{% if
+                subsubitem.qualifier %} <em>({{ subsubitem.qualifier }})</em>{%
+                endif %}
+              </li>
+              {% endfor %}
+            </ul>
+            {% else %} {% if subitem.description %} {{ subitem.description }}:
+            {% endif %}<strong>{{ subitem.price }}</strong>{% if
+            subitem.qualifier %} <em>({{ subitem.qualifier }})</em>{% endif %}
+            {% endif %}
+          </li>
+          {% endfor %}
+        </ul>
+        {% endif %}
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+<section
+  class="prose mt-8 max-w-full"
+  x-data="{ 
+    quote: {comment: '', author: '', location: ''},
+    showQuote: false,
+    testimonials: {{ testimonials.items | dump }},
+    getRandomQuote() {
+      this.showQuote = false;
+      i = Math.floor(Math.random() * this.testimonials.length);
+      this.quote = this.testimonials[i];
+      this.showQuote = true;
+      }
+    }"
+  x-init="
+    getRandomQuote();
+    setInterval(() => {
+      getRandomQuote();
+    }, 15000)"
+>
+  <div class="flex justify-center">
+    <blockquote
+      class="w-4/5 border-yellow-800 text-yellow-800"
+      x-show="showQuote"
+      x-transition:enter="transition ease-out duration-600"
+      x-transition:enter-start="opacity-0 transform"
+      x-transition:enter-end="opacity-100 transform"
+      x-transition:leave="transition ease-in duration-400"
+      x-transition:leave-start="opacity-100 transform"
+      x-transition:leave-end="opacity-0 transform"
+    >
+      <span x-text="quote.comment"></span>
+      <cite class="text-sm">
+        - <span x-text="quote.author"></span>,
+        <span x-text="quote.location"></span
+      ></cite>
+    </blockquote>
+  </div>
+</section>
+<div class="mt-8 rounded-lg bg-yellow-200 px-4 py-2 text-stone-800">
+  Store policy: Any instrument left more than one month after completion will
+  incur a storage fee of $10.00 per week unless previously agreed upon.
+</div>

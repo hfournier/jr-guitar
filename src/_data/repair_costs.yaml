@@ -1,0 +1,191 @@
+items:
+  - category: Re-strings
+    description:
+      Includes installing the strings, oiling the board, stretching the
+      strings, tuning to pitch and polishing the guitar.
+    items:
+      - description: 6-String
+        price: $20.00
+        qualifier: plus cost of strings
+      - description: 12-String
+        price: $30.00
+        qualifier: plus cost of strings
+  - category: Set-ups and Fret Leveling
+    description:
+      "Guitar set-ups include: diagnostics, re-dressing and buffing of
+      frets, cleaning the fret board, tightening all hardware, re-stringing,
+      adjusting of nut slots as needed, truss rod adjustment, action adjustment,
+      setting of intonation, checking all electronics, adjusting pick-ups,
+      detailing and cleaning of the guitar. Balancing string output on amplified
+      acoustics. Fret leveling includes measuring and leveling of frets,
+      re-crowning and re-dressing to a mirror polish."
+    items:
+      - sub_category: Standard
+        description:
+          Hard Tails, Les Pauls, Teles, 4-string Basses, Acoustic 6-strings,
+          Classical Acoustics, Ukuleles, Strat-style guitars, Guitars with
+          Bigsbys, Lapsteels, 7-string electrics, 5-string Basses, Resonator
+          Guitars
+        items:
+          - description: null
+            price: $65 - $75
+            qualifier: null
+          - description: null
+            price: $125 - $135
+            qualifier: with fret leveling
+      - sub_category: Advanced
+        description:
+          Locking Tremolo Guitars (Floyd Rose trems), 12-string guitars,
+          Latin Instruments, 6-string Basses, Banjos, Jaguars & Jazzmasters
+          (Includes shimming neck, taping bridge and HAN on saddles)
+        items:
+          - description: null
+            price: $75 - $85
+            qualifier: null
+          - description: null
+            price: $135 - $145
+            qualifier: with fret leveling
+      - description: Rickenbacker Bass OR 6-String Guitar
+        price: $90, $150
+        qualifier: with fret leveling
+      - description: Rickenbacker 12-String
+        price: $100, $160
+        qualifier: with fret leveling
+      - description: Steinburger Trans Trem
+        price: $160, $190
+        qualifier: with fret leveling
+      - description: Buzz Feiten Retrofit, most electrics
+        price: $150 and up
+        qualifier: set-up is included
+  - category: Maintenance, Repairs & Adjustments (minimum bench fee - $20.00)
+    items:
+      - description: Adjust action or intonation
+        price: $15.00
+        qualifier: included with set-up
+      - description: Adjust truss rod
+        price: $40.00
+        qualifier: included with set-up
+      - description: Lower nut slots
+        price: $20.00
+        qualifier: included with set-up
+      - description: Dowel and drill strap button
+        price: $25.00
+      - description: Strap button install
+        price: $15.00
+        qualifier: 50% off with set-up
+      - description: Shimming neck
+        price: $15.00
+      - description: Shimming side of neck pocket
+        price: $20.00
+      - description: Dirty guitar or rusty/frozen hardware
+        qualifier: estimate required
+      - description: Individual saddle installation for strat or Gibson bridges
+        price: $40.00
+      - sub_category: Nuts
+        description: All guitar nut work includes hand-cutting and shaping new
+          fingerboard nuts from rough bone blanks and custom fitting for each
+          instrument. If there is difficulty in removing the nuts, expect a
+          phone call or text and an increase in cost. Restringing and set-up is
+          NOT included and is charged as listed above. Guitars with always play
+          better with a full set-up.
+        price: $25.00
+        items:
+          - description: Fender style
+            price: $90.00
+            qualifier: save $15.00 with set-up
+          - description: Gibson style, acoustic or Fender w/ binding
+            price: $95.00
+          - description: 12-String
+            price: $150.00
+          - description: Install plastic nut
+            price: $35.00
+          - description: Graphite
+            price: $100.00
+          - description: Mandolin
+            price: $140.00
+          - description: Banjo
+            price: $70.00
+    description: ""
+  - category: Structural Repairs
+    description: >-
+      Re-glue loose binding on top, side or back with touch-ups.
+
+
+      Can be a very difficult repair that requires lots of touch-ups to make it work and look good.
+    items:
+      - description: First side
+        price: $275.00
+        qualifier: each additional side $125
+      - description: Repair binding that is missing, cracked, disintegrating
+        qualifier: quote is required
+      - description: Replacing binding, on any part of guitar
+        qualifier: quote is required
+      - sub_category: Bridges
+        description:
+          All prices are for 6 string acoustic guitars. Add $20 for 12
+          strings. (A re-string is NOT included in pricing.)
+        items:
+          - description: Saddle
+            price: $60.00
+          - description: Bridge remove and reglue, Martin style 6 string
+            price: $120.00
+          - description: Bridge reglue on ovation or Korean poly-top 6 string
+            price: $145.00
+          - description: Bridge reglue on classical guitar
+            price: $130.00
+          - description: Plane or rout bridge, 6-string
+            price: $60.00
+          - description: Plane or rout bridge, 12-string
+            price: $120.00
+          - description: Build new bridge
+            qualifier: quote required
+            price: " "
+  - category: Electronics
+    items:
+      - description: Minimum bench fee or diagnosis
+        price: $20.00
+      - description: Hollow bodies add-on
+        price: $20.00 - $60.00
+      - description: Pick up installation
+        price: $50.00 for one, $60.00 for two, $70.00 for three
+      - description: Pick up installation on tele, bridge
+        price: $60.00
+      - description: Pick up installation on tele, neck
+        price: $50.00
+      - description: Pick up installation on tele, set
+        price: $65.00
+      - description: Repairing/rewinding pick ups, single coil
+        price: $125.00, Humbucker $175
+        qualifier: with uninstall and reinstall
+      - description: Acoustic pick up install, undersaddle
+        price: $80.00
+  - category: Necks
+    items:
+      - description: Mounting neck, no drilling
+        price: $40.00
+        qualifier: save $20.00 if set-up is included
+      - description: Mount neck, with drilling
+        price: $60.00
+      - description: Dowel and drill stripped neck
+        price: $45.00
+      - description: Replace or fix truss rod
+        qualifier: quote required
+  - category: Cracks & Structural
+    items:
+      - description: Headstocks and top cracks
+        price: $100.00
+        qualifier: if multiple cracks or over 6", a quote is required
+      - description: Seal cracked bridge
+        price: $30.00
+      - description: Headstock reglue, no touch up
+        price: $100.00
+      - description: Headstock off
+        qualifier: quote required
+      - description: Loose brace reglue
+        price: $50.00
+      - description: Off brace reglue
+        price: $65.00
+      - description: Brace, build and replace
+        price: $100.00
+      - description: All other structural repairs
+        qualifier: quote required

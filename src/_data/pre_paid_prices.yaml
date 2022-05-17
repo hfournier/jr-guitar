@@ -1,0 +1,8 @@
+---
+items:
+  - description: for 120 minutes ($35.00 for 30 minutes)
+    price: $140.00
+  - description: for 180 minutes ($52.50 for 45 minutes)
+    price: $210.00
+  - description: for 240 minutes ($70.00 for 60 minutes)
+    price: $280.00

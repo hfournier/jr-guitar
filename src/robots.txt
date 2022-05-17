@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://jimrhindress.com/sitemap.xml
+Sitemap: https://www.jimrhindress.com/sitemap.xml

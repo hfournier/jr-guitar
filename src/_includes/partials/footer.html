@@ -1,0 +1,189 @@
+<footer class="mx-auto max-w-5xl bg-yellow-50 text-center">
+  <svg
+    viewbox="0 0 1029 68"
+    xmlns="http://www.w3.org/2000/svg"
+    fill-rule="evenodd"
+    clip-rule="evenodd"
+    stroke-linejoin="round"
+    stroke-miterlimit="2"
+    aria-label="curved shape hinting at the top of a guitar"
+    class="text-stone-700"
+  >
+    <path
+      d="M1031.002 69.34c-52-70-180-85-306.594-54-167.582 49.406-335.253 71.368-494.958 21C165.482 16.166 32.687 23.457.005 69.34h1030.997z"
+      fill="currentColor"
+    />
+  </svg>
+  <div class="bg-stone-700 pb-4 text-stone-300">
+    <div class="grid grid-cols-1 py-4 sm:grid-cols-3">
+      <div class="mb-4 ml-16 text-left sm:mx-auto sm:mb-0">
+        Navigation
+        <ul class="pl-4">
+          <li>
+            <a
+              class="text-yellow-50 hover:text-yellow-200 {{ 'text-yellow-200' if path == 'home' }}"
+              href="/"
+              >Home</a
+            >
+          </li>
+          {% if navigation.items %} {% for item in navigation.items %}
+          <li>
+            <a
+              class="text-yellow-50 hover:text-yellow-200 {{ 'text-yellow-200' if path == item.path }}"
+              href="{{ item.url | url}}"
+              >{{ item.text }}</a
+            >
+          </li>
+          {% endfor %} {% endif %}
+        </ul>
+      </div>
+      <div class="mb-4 ml-16 text-left sm:mx-auto sm:mb-0">
+        Related
+        <ul class="pl-4">
+          <li class="py-1">
+            <a
+              class="flex text-yellow-50 hover:text-yellow-200"
+              href="https://www.cover2coverkelowna.com/"
+              target="cover2cover"
+            >
+              Cover2Cover</a
+            >
+          </li>
+          <li class="py-1">
+            <a
+              class="flex text-yellow-50 hover:text-yellow-200"
+              href="https://www.smittenkelowna.com/"
+              target="smitten"
+            >
+              Smitten!</a
+            >
+          </li>
+          <li class="py-1">
+            <a
+              class="flex text-yellow-50 hover:text-yellow-200"
+              href="https://www.kelownavoicelab.com/"
+              target="kelownavoicelab"
+            >
+              Kelowna Voice Lab</a
+            >
+          </li>
+        </ul>
+      </div>
+      <div class="mb-4 ml-16 text-left sm:mx-auto sm:mb-0">
+        Contact
+        <ul class="pl-4">
+          <li
+            class="pb-2 text-yellow-50 hover:text-yellow-200 {{ 'text-yellow-200' if path == 'contact' }}"
+          >
+            <a href="/contact">Message Me</a>
+          </li>
+          <li class="pb-2">
+            Call or text (9:00 am - 9:00 pm)<br />
+            <a
+              class="text-yellow-50 hover:text-yellow-200"
+              href="tel:+12503175233"
+              >250.317.5233</a
+            >
+          </li>
+          <li class="pb-2 text-yellow-50 hover:text-yellow-200">
+            <a
+              href="https://www.google.ca/maps/place/888+Wardlaw+Ave,+Kelowna,+BC+V1Y+5B9/@49.867648,-119.4855165,17z/data=!3m1!4b1!4m5!3m4!1s0x537d8b5075d61c05:0xf98d94b6440b5ad!8m2!3d49.8676446!4d-119.4833225"
+              target="maps"
+              >888 Wardlaw Ave<br />Kelowna, BC<br />V1Y 5B9</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div
+      class="flex items-center justify-center space-x-8 py-4 sm:space-x-12 md:space-x-16"
+    >
+      <a class="text-yellow-50 hover:text-yellow-200" href="#" target="social">
+        <svg
+          viewbox="0 0 260 260"
+          xmlns="http://www.w3.org/2000/svg"
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          stroke-linejoin="round"
+          stroke-miterlimit="2"
+          aria-label="YouTube icon"
+          class="h-8 w-8"
+        >
+          <path
+            d="M103.409 168.659V91.34l67.954 38.66-67.954 38.658zM254.566 67.014c-2.99-11.26-11.8-20.127-22.986-23.136C211.304 38.41 130 38.41 130 38.41s-81.305 0-101.58 5.47C17.234 46.886 8.423 55.753 5.433 67.013 0 87.42 0 130 0 130s0 42.578 5.433 62.986c2.99 11.26 11.8 20.127 22.987 23.137 20.275 5.468 101.58 5.468 101.58 5.468s81.304 0 101.58-5.468c11.186-3.01 19.996-11.877 22.986-23.137C260 172.578 260 130 260 130s0-42.58-5.434-62.986"
+            fill="currentColor"
+            fill-rule="nonzero"
+          />
+        </svg>
+      </a>
+      <a class="text-yellow-50 hover:text-yellow-200" href="#" target="social">
+        <svg
+          viewbox="0 0 260 260"
+          xmlns="http://www.w3.org/2000/svg"
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          stroke-linejoin="round"
+          stroke-miterlimit="2"
+          aria-label="Facebook icon"
+          class="h-8 w-8"
+        >
+          <path
+            d="M260 130C260 58.203 201.797 0 130 0S0 58.203 0 130c0 64.887 47.54 118.668 109.687 128.42v-90.842H76.68V130h33.007v-28.64c0-32.582 19.409-50.579 49.103-50.579 14.223 0 29.1 2.54 29.1 2.54v31.991h-16.392c-16.15 0-21.186 10.021-21.186 20.302V130h36.055l-5.764 37.578h-30.29v90.843C212.46 248.668 260 194.887 260 130z"
+            fill="currentColor"
+            fill-rule="nonzero"
+          />
+          <path
+            d="M180.603 167.578L186.367 130h-36.055v-24.386c0-10.28 5.037-20.302 21.186-20.302h16.393V53.32s-14.878-2.539-29.1-2.539c-29.695 0-49.104 17.997-49.104 50.578V130H76.68v37.578h33.007v90.843A130.973 130.973 0 00130 260c6.91 0 13.694-.541 20.312-1.58v-90.842h30.291z"
+            fill="none"
+          />
+        </svg>
+      </a>
+      <a class="text-yellow-50 hover:text-yellow-200" href="#" target="social">
+        <svg
+          viewbox="0 0 260 260"
+          xmlns="http://www.w3.org/2000/svg"
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          stroke-linejoin="round"
+          stroke-miterlimit="2"
+          aria-label="Instagram icon"
+          class="h-8 w-8"
+        >
+          <g fill="currentColor" fill-rule="nonzero">
+            <path
+              d="M130 0C94.694 0 90.267.15 76.401.782c-13.837.632-23.287 2.83-31.556 6.043-8.55 3.322-15.799 7.767-23.026 14.995-7.227 7.227-11.672 14.476-14.994 23.025C3.61 53.114 1.413 62.565.782 76.401.149 90.267 0 94.694 0 130.001c0 35.305.15 39.732.782 53.598.631 13.837 2.829 23.287 6.043 31.556 3.322 8.549 7.767 15.798 14.994 23.026 7.227 7.227 14.477 11.672 23.026 14.995 8.269 3.213 17.72 5.41 31.556 6.042 13.866.632 18.293.782 53.6.782 35.305 0 39.732-.15 53.598-.782 13.837-.631 23.287-2.83 31.556-6.042 8.549-3.323 15.798-7.768 23.026-14.995 7.227-7.228 11.672-14.477 14.995-23.026 3.213-8.269 5.41-17.72 6.042-31.556.632-13.866.782-18.293.782-53.599s-.15-39.733-.782-53.599c-.631-13.837-2.83-23.287-6.042-31.556-3.323-8.549-7.768-15.798-14.995-23.025-7.228-7.228-14.477-11.673-23.026-14.995-8.269-3.214-17.72-5.411-31.556-6.043C169.733.15 165.306 0 130 0zm0 23.424c34.711 0 38.823.132 52.531.757 12.675.579 19.559 2.697 24.14 4.477 6.067 2.358 10.398 5.175 14.947 9.724 4.55 4.55 7.366 8.88 9.725 14.948 1.78 4.58 3.898 11.464 4.476 24.139.625 13.708.758 17.82.758 52.531s-.133 38.823-.758 52.531c-.578 12.675-2.696 19.559-4.476 24.14-2.359 6.067-5.176 10.398-9.725 14.947-4.549 4.55-8.88 7.366-14.948 9.725-4.58 1.78-11.464 3.898-24.139 4.476-13.706.625-17.817.758-52.53.758-34.715 0-38.826-.133-52.532-.758-12.675-.578-19.558-2.696-24.14-4.476-6.067-2.359-10.398-5.176-14.947-9.725-4.55-4.549-7.367-8.88-9.724-14.948-1.78-4.58-3.899-11.464-4.477-24.139-.626-13.708-.758-17.82-.758-52.53 0-34.712.132-38.824.758-52.532.578-12.675 2.696-19.558 4.477-24.14 2.357-6.067 5.175-10.398 9.724-14.947 4.55-4.549 8.88-7.366 14.948-9.724 4.58-1.78 11.464-3.898 24.139-4.477 13.708-.625 17.82-.757 52.531-.757z"
+            />
+            <path
+              d="M130 173.333c-23.932 0-43.333-19.4-43.333-43.333 0-23.932 19.4-43.333 43.333-43.333s43.333 19.4 43.333 43.333-19.4 43.333-43.333 43.333zm0-110.09c-36.869 0-66.757 29.888-66.757 66.757S93.131 196.757 130 196.757s66.757-29.888 66.757-66.757S166.869 63.243 130 63.243zM214.995 60.606c0 8.616-6.985 15.6-15.6 15.6-8.616 0-15.6-6.984-15.6-15.6s6.984-15.6 15.6-15.6c8.615 0 15.6 6.984 15.6 15.6z"
+            />
+          </g>
+        </svg>
+      </a>
+      <a class="text-yellow-50 hover:text-yellow-200" href="#" target="social">
+        <svg
+          version="1.1"
+          xmlns="http://www.w3.org/2000/svg"
+          x="0"
+          y="0"
+          viewbox="0 0 248 204"
+          xml:space="preserve"
+          aria-label="Twitter icon"
+          class="h-8 w-8"
+        >
+          <g>
+            <path
+              d="M221.95 51.29c.15 2.17.15 4.34.15 6.53 0 66.73-50.8 143.69-143.69 143.69v-.04c-27.44.04-54.31-7.82-77.41-22.64 3.99.48 8 .72 12.02.73 22.74.02 44.83-7.61 62.72-21.66-21.61-.41-40.56-14.5-47.18-35.07a50.338 50.338 0 0022.8-.87C27.8 117.2 10.85 96.5 10.85 72.46v-.64a50.18 50.18 0 0022.92 6.32C11.58 63.31 4.74 33.79 18.14 10.71a143.333 143.333 0 00104.08 52.76 50.532 50.532 0 0114.61-48.25c20.34-19.12 52.33-18.14 71.45 2.19 11.31-2.23 22.15-6.38 32.07-12.26a50.69 50.69 0 01-22.2 27.93c10.01-1.18 19.79-3.86 29-7.95a102.594 102.594 0 01-25.2 26.16z"
+              fill="currentColor"
+            />
+          </g>
+        </svg>
+      </a>
+    </div>
+    <div class="py-4">
+      I love to talk guitars and am always open to sales and/or trades.
+    </div>
+    <small x-data="{ get year() { return new Date().getFullYear() } }"
+      >Copyright © {{settings.name}} <span x-text="year"></span
+    ></small>
+  </div>
+</footer>

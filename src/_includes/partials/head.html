@@ -1,0 +1,53 @@
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{title}}</title>
+  <meta name="title" content="{{title}}" />
+  <meta property="og:title" content="{{title}}" />
+  <meta name="twitter:title" content="{{title}}" />
+  {% if description %}
+  <meta name="description" content="{{description}}" />
+  <meta property="og:description" content="{{description}}" />
+  <meta name="twitter:description" content="{{description}}" />
+  {% endif %} {% if type %}
+  <meta property="og:type" content="{{type}}" />
+  {% endif %}
+  <meta name="url" content="{{settings.url}}{{page.url}}" />
+  <meta property="og:url" content="{{settings.url}}{{page.url}}" />
+  <meta
+    property="og:image"
+    content="{{settings.url}}/static/img/jr-guitar-logo.png"
+  />
+  <meta
+    name="keywords"
+    content="Jim,Rhindress,guitar,repair,repairs,guitar repair,musician,band,guitarist,professional,setup,set-up,set up,fret,frets,electric,acoustic,mandolin,bass,dobro,violin,luthier,telecaster,stratocaster,les paul,gibson,taylor,fender,fix,broken,buzz,used"
+  />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
+  <meta name="msapplication-TileColor" content="#da532c" />
+  <meta name="theme-color" content="#ffffff" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" type="text/css" href="/static/css/style.css" />
+  <script
+    defer
+    src="https://unpkg.com/@alpinejs/collapse@3.x.x/dist/cdn.min.js"
+  ></script>
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  {% if path == "home" %}
+  <!-- Netlify Identity Widget -->
+  <!-- Needed only if you are using Netlify Identity feature -->
+  <script
+    type="text/javascript"
+    src="https://identity.netlify.com/v1/netlify-identity-widget.js"
+  ></script>
+  {% endif %}
+</head>

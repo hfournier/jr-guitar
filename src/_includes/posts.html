@@ -1,0 +1,19 @@
+---
+layout: default
+---
+
+<main
+  class="prose mx-auto max-w-5xl bg-yellow-50 px-4 pt-8 pb-4 sm:pt-14 md:pt-16 lg:pt-24"
+>
+  <div class="container max-w-4xl px-6">
+    <div class="mb-5 border-b border-stone-100 pb-5">
+      <h1>{{title}}</h1>
+      <p class="text-center text-base font-medium leading-6 text-stone-500">
+        <time> {{ date | readableDate }} by {{ author }} </time>
+      </p>
+    </div>
+    <article class="prose mx-auto my-4 lg:prose-xl">
+      {{ content | safe }}
+    </article>
+  </div>
+</main>

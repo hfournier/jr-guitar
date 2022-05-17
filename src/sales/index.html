@@ -1,0 +1,76 @@
+---
+layout: default
+title: Guitar Sales | JR Guitar | Kelowna, BC
+description: JR Guitar sells and custom builds dream guitars
+path: sales
+---
+
+<section class="prose max-w-full">
+  <h1>Guitar Sales</h1>
+  <p>
+    Jim usually has Telecasters and Stratocasters that are either assembled
+    in-house or recent trades. But, inventory is constantly changing, so check
+    here often to see what's available.
+  </p>
+  <img
+    class="mx-auto rounded-md"
+    src="/static/img/guitars-for-sale.jpg"
+    alt="Several electric guitars on display for sale"
+  />
+  <p>I have several demo videos of guitars that are on sale now:</p>
+  <div class="pl-8">
+    {% if for_sale.items %} {% for item in for_sale.items %}
+    <div class="flex items-center">
+      {% if item.url %}
+      <svg
+        viewBox="0 0 260 260"
+        xmlns="http://www.w3.org/2000/svg"
+        fill-rule="evenodd"
+        clip-rule="evenodd"
+        stroke-linejoin="round"
+        stroke-miterlimit="2"
+        aria-label="YouTube icon"
+        class="h-6 pr-2 text-yellow-700"
+      >
+        <path
+          d="M103.409 168.659V91.34l67.954 38.66-67.954 38.658zM254.566 67.014c-2.99-11.26-11.8-20.127-22.986-23.136C211.304 38.41 130 38.41 130 38.41s-81.305 0-101.58 5.47C17.234 46.886 8.423 55.753 5.433 67.013 0 87.42 0 130 0 130s0 42.578 5.433 62.986c2.99 11.26 11.8 20.127 22.987 23.137 20.275 5.468 101.58 5.468 101.58 5.468s81.304 0 101.58-5.468c11.186-3.01 19.996-11.877 22.986-23.137C260 172.578 260 130 260 130s0-42.58-5.434-62.986"
+          fill="currentColor"
+          fill-rule="nonzero"
+        />
+      </svg>
+      <a
+        class="text-yellow-700 no-underline hover:text-yellow-600 hover:underline"
+        href="{{ item.url | url }}"
+        target="youtube"
+      >
+        {{ item.title }}
+      </a>
+      {% else %}
+      <span class="pl-8">{{ item.title }}</span>
+      {% endif %} {% if item.status === "Sold" %}
+      <span>&nbsp;(<strong>{{ item.status }}</strong>)</span>
+      {% elif item.status === "Available" and item.price %} &nbsp;(<strong
+        >{{ item.price }}</strong
+      >) {% endif %}
+    </div>
+    {% endfor %} {% endif %}
+  </div>
+  <p>
+    Phone or text Jim Rhindress at
+    <a
+      class="text-yellow-700 no-underline hover:text-yellow-600 hover:underline"
+      href="tel:+12503175233"
+      >250.317.5233</a
+    >
+    for full descriptions or to set up a time to swing by and play these
+    beauties.
+  </p>
+  <p>
+    Based on your budget, playing style, and preferences, Jim can custom build
+    your dream electric guitar.
+  </p>
+  <p>
+    He also specializes in aging (relicing) guitars to turn them into beautiful
+    authentic looking road-worn beauties.
+  </p>
+</section>

@@ -1,0 +1,43 @@
+---
+layout: default
+title: Guitar Lessons and coaching | JR Guitar | Kelowna, BC
+description: JR Guitar provides guitar lessons and coaching
+path: lessons
+---
+
+<section class="prose max-w-full">
+  <h1>Guitar Lessons and Coaching</h1>
+  <p>
+    I am available for guitar lessons and coaching. Players can choose between a
+    flexible drop-in guitar lesson or a more economical prepaid package of 4
+    guitar lessons.
+  </p>
+  <p>Drop-in prices are:</p>
+  <ul class="pl-4">
+    {% for item in drop_in_prices.items %} {% if item.description and item.price
+    %}
+    <li><strong>{{ item.price }}</strong> {{ item.description }}</li>
+    {% endif %} {% endfor %}
+  </ul>
+  <p>Pre-paid prices are:</p>
+  <ul class="pl-4">
+    {% for item in pre_paid_prices.items %} {% if item.description and
+    item.price %}
+    <li><strong>{{ item.price }}</strong> {{ item.description }}</li>
+    {% endif %} {% endfor %}
+  </ul>
+  <small>All prices include GST</small>
+  <div class="mt-4 flex w-full justify-center">
+    <a
+      href="http://kelownavoicelab.calendarspots.com/"
+      target="calendarspots"
+      class="btn btn-yellow font-bold no-underline"
+      >Book an appointment now!</a
+    >
+  </div>
+  <img
+    class="mx-auto mt-8 rounded-md"
+    src="/static/img/jim-rhindress-guitars.jpg"
+    alt="Jim Rhindress sitting with several guitars"
+  />
+</section>

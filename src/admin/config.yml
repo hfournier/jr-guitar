@@ -1,0 +1,192 @@
+backend:
+  # Use netlify identity as backend
+  name: git-gateway
+  branch: master
+  ### enable below lines for github integration ###
+  # name: github
+  # repo: surjithctly/neat-starter
+media_folder: "src/static/img"
+public_folder: "/static/img"
+
+# Please run "npx netlify-cms-proxy-server" for local backend
+local_backend: true
+# publish_mode: editorial_workflow
+collections:
+  - label: "Blog"
+    name: "blog"
+    folder: "src/posts"
+    create: true
+    editor:
+      preview: false
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Author", name: "author", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Body", name: "body", widget: "markdown" }
+      - widget: select
+        label: "tags"
+        name: "tags"
+        multiple: true
+        options: ["guitar", "repair", "sale", "scam", "fake"]
+  - label: "Settings"
+    name: "settings"
+    editor:
+      preview: false
+    files:
+      - label: "Navigation"
+        name: "items"
+        file: "src/_data/navigation.yaml"
+        fields:
+          - label: Nav Items
+            name: items
+            widget: list
+            allow_add: false
+            collapsed: true
+            fields:
+              - { label: Title, name: text, widget: string }
+              - { label: URL, name: url, widget: string }
+      - label: "Meta Settings"
+        name: "settings"
+        file: "src/_data/settings.yaml"
+        fields:
+          - { label: Name, name: name, widget: string }
+          - { label: Author, name: author, widget: string }
+          - { label: URL, name: url, widget: string }
+      - label: "Drop-In Prices"
+        name: "drop_in_prices"
+        file: "src/_data/drop_in_prices.yaml"
+        fields:
+          - label: Drop-In Prices
+            name: items
+            widget: list
+            collapsed: false
+            label_singular: Drop-In Price item
+            fields:
+              - { label: Price, name: price, widget: string }
+              - { label: Description, name: description, widget: string }
+      - label: "Pre-Paid Prices"
+        name: "pre_paid_prices"
+        file: "src/_data/pre_paid_prices.yaml"
+        fields:
+          - label: Pre-Paid Prices
+            name: items
+            widget: list
+            collapsed: false
+            label_singular: Pre-Paid Price item
+            fields:
+              - { label: Price, name: price, widget: string }
+              - { label: Description, name: description, widget: string }
+      - label: "For Sale"
+        name: "for_sale"
+        file: "src/_data/for_sale.yaml"
+        fields:
+          - label: Items For Sale
+            name: items
+            widget: list
+            collapsed: true
+            label_singular: Item for Sale
+            fields:
+              - { label: Title, name: title, widget: string }
+              - {
+                  label: YouTube link,
+                  name: url,
+                  widget: string,
+                  required: false,
+                }
+              - { label: Price, name: price, widget: string, required: false }
+              - widget: select
+                label: "Status"
+                name: "status"
+                multiple: false
+                options: ["Available", "Sold"]
+      - label: "Repair Costs"
+        name: "repair_costs"
+        file: "src/_data/repair_costs.yaml"
+        fields:
+          - label: Repair Cost Items
+            name: items
+            widget: list
+            summary: "Category: {{fields.category}}"
+            collapsed: true
+            label_singular: Repair Cost item
+            fields:
+              - { label: Category, name: category, widget: string }
+              - {
+                  label: Description,
+                  name: description,
+                  widget: text,
+                  required: false,
+                }
+              - label: Repair Cost Item
+                name: items
+                widget: list
+                summary: "Sub-category: {{fields.sub_category}}; Price: {{fields.price}}"
+                collapsed: true
+                fields:
+                  - {
+                      label: Description,
+                      name: description,
+                      widget: text,
+                      required: false,
+                    }
+                  - {
+                      label: Price,
+                      name: price,
+                      widget: string,
+                      hint: "Leave blank if this is a sub-category",
+                      required: false,
+                    }
+                  - {
+                      label: Qualifier,
+                      name: qualifier,
+                      widget: string,
+                      hint: "Displayed after price like: $100 (plus parts)",
+                      required: false,
+                    }
+                  - {
+                      label: Sub-Category,
+                      name: sub_category,
+                      widget: string,
+                      hint: "Leave blank if this is not a sub-category",
+                      required: false,
+                    }
+                  - label: Repair Cost Sub-Item
+                    name: items
+                    widget: list
+                    summary: "{{fields.description}} {{fields.price}}"
+                    required: false
+                    collapsed: true
+                    fields:
+                      - {
+                          label: Description,
+                          name: description,
+                          widget: string,
+                          required: false,
+                        }
+                      - { label: Price, name: price, widget: string }
+                      - {
+                          label: Qualifier,
+                          name: qualifier,
+                          widget: string,
+                          required: false,
+                        }
+      - label: "Testimonials"
+        name: "testimonials"
+        file: "src/_data/testimonials.yaml"
+        fields:
+          - label: Testimonials
+            name: items
+            widget: list
+            collapsed: true
+            label_singular: Testimonial
+            fields:
+              - { label: Comment, name: comment, widget: text }
+              - { label: Author, name: author, widget: string }
+              - { label: Date, name: date, widget: date, required: false }
+              - {
+                  label: Location,
+                  name: location,
+                  widget: string,
+                  required: false,
+                }

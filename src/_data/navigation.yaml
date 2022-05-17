@@ -1,0 +1,20 @@
+---
+items:
+  - text: Repairs
+    url: "/guitar-repairs-kelowna"
+    path: repairs
+  - text: Sales
+    url: "/sales"
+    path: sales
+  - text: Lessons
+    url: "/lessons"
+    path: lessons
+  - text: About
+    url: "/about"
+    path: about
+  - text: Blog
+    url: "/blog"
+    path: blog
+  - text: Contact
+    url: "/contact"
+    path: contact

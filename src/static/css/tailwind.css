@@ -1,0 +1,278 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*Your Custom CSS Goes here*/
+
+@layer components {
+  body {
+    background-image: url("/static/img/jr-guitar-logo-45.png");
+    background-repeat: repeat;
+    @apply bg-yellow-50/40;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-ubuntu;
+  }
+
+  .menu-link:hover .guitar-pick {
+    @apply opacity-100 !important;
+  }
+
+  a.menu-link-active + .guitar-pick {
+    @apply opacity-100 !important;
+    @apply text-yellow-200 !important;
+  }
+
+  .fret:nth-child(even)::before {
+    content: "";
+    @apply w-4;
+    @apply h-4;
+    @apply absolute;
+    @apply inset-0;
+    @apply m-auto;
+    @apply bg-stone-200;
+    @apply opacity-20;
+    @apply rounded-full;
+  }
+
+  button:focus > h3.tab-heading {
+    @apply text-yellow-700;
+  }
+
+  /* button styles */
+
+  .btn {
+    @apply py-2;
+    @apply px-4;
+    @apply rounded;
+    @apply font-semibold;
+    @apply uppercase;
+  }
+
+  .btn-small {
+    @apply text-sm;
+    @apply py-1;
+    @apply px-3;
+  }
+
+  .btn-large {
+    @apply text-xl;
+    @apply py-3;
+    @apply px-5;
+  }
+
+  .btn-fab {
+    @apply flex;
+    @apply items-center;
+    @apply px-3;
+    @apply py-3;
+    @apply rounded-full;
+  }
+
+  .btn:not(:disabled):hover {
+    @apply shadow-lg;
+  }
+
+  .btn:focus {
+    @apply outline-none;
+    @apply ring;
+  }
+
+  .btn-yellow {
+    @apply bg-yellow-600;
+    @apply text-stone-900;
+  }
+
+  .btn-yellow:not(:disabled):hover {
+    @apply bg-yellow-500;
+  }
+
+  .btn-yellow:not(:disabled):focus {
+    @apply bg-yellow-700;
+  }
+
+  .btn-yellow:not(:disabled):active {
+    @apply bg-yellow-700;
+  }
+
+  .btn-yellow.btn-outline {
+    @apply border-yellow-700;
+    @apply text-yellow-700;
+  }
+
+  .btn-outline {
+    @apply bg-transparent;
+    @apply border;
+  }
+
+  .btn-outline:not(:disabled):hover,
+  .btn-outline:not(:disabled):focus,
+  .btn-outline:not(:disabled):active {
+    @apply border-transparent;
+    @apply text-white;
+  }
+
+  .btn-raised {
+    @apply shadow-lg;
+  }
+
+  .btn-raised:not(:disabled):hover {
+    @apply shadow-xl;
+  }
+
+  .btn:disabled {
+    @apply opacity-50;
+    @apply cursor-not-allowed;
+  }
+
+  /* form input styles */
+
+  .text-field-outline {
+    @apply relative;
+    @apply border;
+    @apply rounded;
+    @apply border-yellow-600;
+  }
+
+  .text-field-outline:focus-within {
+    @apply border-transparent;
+  }
+
+  .text-field-outline > input,
+  .text-field-outline > textarea {
+    @apply block;
+    @apply relative;
+    @apply pl-4;
+    @apply pr-3;
+    @apply py-4;
+    @apply w-full;
+    @apply appearance-none;
+    @apply bg-transparent;
+    @apply z-10;
+  }
+
+  .text-field-outline.dense > input,
+  .text-field-outline.dense > textarea {
+    @apply py-2;
+  }
+
+  .text-field-outline > input:focus,
+  .text-field-outline > textarea:focus {
+    @apply outline-none;
+  }
+
+  .inner-outline {
+    @apply absolute;
+    @apply border-2;
+    @apply border-transparent;
+    @apply rounded;
+    height: calc(100% + 2 * 1px);
+    width: calc(100% + 2 * 1px);
+    top: -1px;
+    left: -1px;
+  }
+
+  .text-field-outline:hover > .inner-outline {
+    @apply border-yellow-700;
+  }
+
+  .text-field-outline:focus-within > .inner-outline {
+    @apply border-yellow-700;
+  }
+
+  .text-field-outline > input:disabled ~ .inner-outline,
+  .text-field-outline > textarea:disabled ~ .inner-outline {
+    @apply border;
+    @apply border-yellow-500;
+  }
+
+  .text-field-outline > input.input-error ~ .inner-outline,
+  .text-field-outline > textarea.input-error ~ .inner-outline {
+    @apply border-red-600;
+  }
+
+  .text-field-outline > label {
+    @apply absolute;
+    @apply top-0;
+    @apply ml-3;
+    @apply px-1;
+    @apply py-4;
+    /* @apply origin-0; */
+    @apply duration-200;
+    @apply text-yellow-600;
+  }
+
+  .text-field-outline.dense > label {
+    @apply py-2;
+  }
+
+  .text-field-outline:focus-within > label {
+    @apply text-yellow-700;
+  }
+
+  .text-field-outline > input:disabled ~ label,
+  .text-field-outline > textarea:disabled ~ label {
+    @apply text-stone-300;
+  }
+
+  .text-field-outline > input.input-error ~ label,
+  .text-field-outline > textarea.input-error ~ label {
+    @apply text-red-600;
+  }
+
+  .text-field-outline:focus-within > label,
+  .text-field-outline > input:not(:placeholder-shown) ~ label,
+  .text-field-outline > textarea:not(:placeholder-shown) ~ label {
+    @apply transform;
+    @apply scale-75;
+    @apply -translate-y-4;
+    @apply py-0;
+    @apply bg-yellow-50;
+    @apply font-bold;
+  }
+
+  .text-field-outline:not(:focus-within)
+    > input:not(:placeholder-shown)
+    ~ label,
+  .text-field-outline:not(:focus-within)
+    > textarea:not(:placeholder-shown)
+    ~ label {
+    @apply text-yellow-700;
+  }
+
+  .text-field-outline:not(:focus-within)
+    > input:disabled:not(:placeholder-shown)
+    ~ label,
+  .text-field-outline:not(:focus-within)
+    > textarea:disabled:not(:placeholder-shown)
+    ~ label {
+    @apply text-yellow-500;
+  }
+
+  .text-field-outline:not(:focus-within)
+    > input.input-error:not(:placeholder-shown)
+    ~ label,
+  .text-field-outline:not(:focus-within)
+    > textarea.input-error:not(:placeholder-shown)
+    ~ label {
+    @apply text-red-600;
+  }
+
+  .error-msg {
+    @apply absolute;
+    @apply text-xs;
+    @apply text-red-600;
+    /* top: calc(height + 0.5rem); */
+    left: 0.5rem;
+  }
+
+  [x-cloak] {
+    display: none !important;
+  }
+}

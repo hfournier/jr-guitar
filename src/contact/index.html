@@ -1,0 +1,331 @@
+---
+layout: default
+title: Guitar Contact info | JR Guitar | Kelowna, BC
+description: JR Guitar you can get in touch with us by phone or email
+path: contact
+---
+
+<section>
+  <div class="prose max-w-full">
+    <h1>Contact Me</h1>
+  </div>
+  <!-- <div class="grid items-center grid-flow-col auto-cols-fr"> -->
+  <div class="mt-8 flex flex-wrap items-center justify-evenly sm:flex-nowrap">
+    <img
+      class="rounded-md"
+      src="/static/img/jr-guitar-house.jpg"
+      alt="Photo of house, which is the home of JR Guitar"
+    />
+    <div class="prose m-0 max-w-full pt-4 sm:px-8 sm:pt-0">
+      JR Guitar is located at
+      <a
+        class="text-yellow-700 no-underline hover:text-yellow-600 hover:underline"
+        href="https://www.google.ca/maps/place/888+Wardlaw+Ave,+Kelowna,+BC+V1Y+5B9/@49.867648,-119.4855165,17z/data=!3m1!4b1!4m5!3m4!1s0x537d8b5075d61c05:0xf98d94b6440b5ad!8m2!3d49.8676446!4d-119.4833225"
+        target="maps"
+        >888 Wardlaw Ave</a
+      >, which is a carriage house <strong>BEHIND</strong> 886 Wardlaw Ave. It
+      is accessed by the laneway between Patterson Ave and Wardlaw Ave (first
+      house on the left). Look for a musical flag. Please
+      <strong>DO NOT</strong> park in front of our house, as it blocks the lane
+      and the city will tow your vehicle. You can park on our driveway or in the
+      empty lot next door.
+    </div>
+  </div>
+  <div class="prose mt-6 max-w-full">
+    <p>
+      If you need to book one of my projects -
+      <a
+        class="text-yellow-700 no-underline hover:text-yellow-600 hover:underline"
+        href="https://www.cover2coverkelowna.com/"
+        target="cover2cover"
+        >Cover2Cover</a
+      >,
+      <a
+        class="text-yellow-700 no-underline hover:text-yellow-600 hover:underline"
+        href="https://www.smittenkelowna.com/"
+        target="smitten"
+        >Rhindress or Smitten</a
+      >
+      , want a studio musician or need JR Guitar to do some guitar work for you,
+      text me or give me a call at
+      <a
+        class="text-yellow-700 no-underline hover:text-yellow-600 hover:underline"
+        href="tel:+12503175233"
+        >250.317.5233</a
+      >
+      (between 9:00 am and 9:00 pm). Or use the form below to message me:
+    </p>
+  </div>
+</section>
+<section class="mt-8 flex justify-center">
+  <div
+    class="w-full space-y-6 rounded-lg border border-yellow-500 p-5 text-left sm:w-1/2 lg:space-y-8 lg:p-10"
+    x-data="form()"
+  >
+    <div class="text-field-outline dense">
+      <input
+        type="text"
+        id="username"
+        name="username"
+        x-model="username.value"
+        x-ref="username"
+        placeholder=""
+        required
+        @blur="username.blurred = true; validateForm()"
+        @input.debounce="validateForm()"
+        :class="{'input-error': username.blurred && username.errors.includes('required')}"
+        aria-required="true"
+      />
+      <div class="inner-outline"></div>
+      <label for="username" x-text="username.label"></label>
+      <div
+        class="error-msg"
+        x-show="username.blurred && username.errors.includes('required')"
+        x-text="username.errorMessage"
+      ></div>
+    </div>
+    <div class="text-field-outline dense">
+      <input
+        type="email"
+        id="email"
+        name="email"
+        x-model="email.value"
+        placeholder=""
+        required
+        email
+        @blur="email.blurred = true; validateForm()"
+        @input.debounce="validateForm()"
+        :class="{'input-error': email.blurred && (email.errors.includes('required') || email.errors.includes('email'))}"
+        aria-required="true"
+      />
+      <div class="inner-outline"></div>
+      <label for="email" x-text="email.label"></label>
+      <div
+        class="error-msg"
+        x-show="email.blurred && (email.errors.includes('required') || email.errors.includes('email'))"
+        x-text="email.errorMessage"
+      ></div>
+    </div>
+    <div class="text-field-outline dense">
+      <input
+        type="text"
+        id="subject"
+        name="subject"
+        x-model="subject.value"
+        placeholder=""
+        required
+        @blur="subject.blurred = true; validateForm()"
+        @input.debounce="validateForm()"
+        :class="{'input-error': subject.blurred && subject.errors.includes('required')}"
+        aria-required="true"
+      />
+      <div class="inner-outline"></div>
+      <label for="subject" x-text="subject.label"></label>
+      <div
+        class="error-msg"
+        x-show="subject.blurred && subject.errors.includes('required')"
+        x-text="subject.errorMessage"
+      ></div>
+    </div>
+    <div class="text-field-outline">
+      <textarea
+        id="message"
+        name="message"
+        x-model="message.value"
+        placeholder=""
+        rows="4"
+        required
+        @blur="message.blurred = true; validateForm()"
+        @input.debounce="validateForm()"
+        :class="{'input-error': message.blurred && message.errors.includes('required')}"
+        aria-required="true"
+      ></textarea>
+      <div class="inner-outline"></div>
+      <label for="message" x-text="message.label"></label>
+      <div
+        class="error-msg"
+        x-show="message.blurred && message.errors.includes('required')"
+        x-text="message.errorMessage"
+      ></div>
+    </div>
+    <div>
+      <button
+        class="btn btn-yellow"
+        type="button"
+        :class="!formValid && 'disabled'"
+        :disabled="!formValid"
+        @click="sendMsg()"
+      >
+        Send Message
+      </button>
+      <button
+        class="btn btn-yellow btn-outline ml-2"
+        @click="resetForm(); $refs.username.focus()"
+      >
+        Clear
+      </button>
+    </div>
+    <div
+      class="firefox:bg-opacity-90 fixed top-0 left-1/2 z-10 max-w-sm -translate-x-1/2 -translate-y-80 transform rounded-2xl border-2 border-solid border-transparent bg-white bg-opacity-30 bg-clip-padding p-4 text-center opacity-0 shadow-lg backdrop-blur backdrop-filter transition-all duration-500 ease-in-out"
+      :class="{
+          'opacity-100 translate-y-80': successMsg
+        }"
+    >
+      Your message was sent successfully.<br />We'll be in touch ASAP.
+    </div>
+    <div
+      class="border-1 firefox:bg-opacity-90 fixed top-0 left-1/2 z-10 max-w-sm -translate-x-1/2 -translate-y-80 transform rounded-2xl border-solid border-transparent bg-red-700 bg-opacity-60 bg-clip-padding p-4 text-center text-white opacity-0 shadow-lg backdrop-blur backdrop-filter transition-all duration-500 ease-in-out"
+      :class="{
+          'opacity-100 translate-y-80': errorMsg
+        }"
+    >
+      Something went wrong.<br />Please try again later.
+    </div>
+  </div>
+</section>
+
+<script>
+  window.form = () => {
+    return {
+      errorMsg: false,
+      successMsg: false,
+      username: {
+        label: "Name",
+        value: "",
+        errorMessage: "",
+        blurred: false,
+        rules: ["required"],
+        errors: [],
+      },
+      email: {
+        label: "Email",
+        value: "",
+        errorMessage: "",
+        blurred: false,
+        rules: ["required", "email"],
+        errors: [],
+      },
+      subject: {
+        label: "Subject",
+        value: "",
+        errorMessage: "",
+        blurred: false,
+        rules: ["required"],
+        errors: [],
+      },
+      message: {
+        label: "Message",
+        value: "",
+        errorMessage: "",
+        blurred: false,
+        rules: ["required"],
+        errors: [],
+      },
+      isEmail: function (value) {
+        return new RegExp("^\\S+@\\S+[\\.][0-9a-z]+$").test(
+          String(value).toLowerCase()
+        );
+      },
+      isRequired: function (value) {
+        return ![null, undefined, ""].includes(value);
+      },
+      isValid: function (prop) {
+        let valid = true;
+        if (prop.rules) {
+          prop.rules.forEach((rule) => {
+            switch (rule) {
+              case "required":
+                if (this.isRequired(prop.value)) {
+                  if (prop.errors.indexOf("required") >= 0) {
+                    prop.errors.splice(prop.errors.indexOf("required"), 1);
+                  }
+                  prop.errorMessage = "";
+                } else {
+                  if (!prop.errors.includes("required")) {
+                    prop.errors.push("required");
+                  }
+                  prop.errorMessage = `${prop.label} is required`;
+                  valid = false;
+                }
+                break;
+
+              case "email":
+                if (this.isEmail(prop.value)) {
+                  if (prop.errors.indexOf("email") >= 0) {
+                    prop.errors.splice(prop.errors.indexOf("email"), 1);
+                  }
+                  prop.errorMessage = "";
+                } else {
+                  if (!prop.errors.includes("email")) {
+                    prop.errors.push("email");
+                  }
+                  prop.errorMessage = `${prop.label} requires a valid email addess`;
+                  valid = false;
+                }
+                break;
+
+              default:
+                break;
+            }
+          });
+        }
+        return valid;
+      },
+      formValid: false,
+      validateForm: function () {
+        this.formValid =
+          this.isValid(this.username) &&
+          this.isValid(this.email) &&
+          this.isValid(this.subject) &&
+          this.isValid(this.message);
+      },
+      reset: function (prop) {
+        prop.value = "";
+        prop.blurred = false;
+        prop.errorMessage = "";
+      },
+      resetForm: function () {
+        this.reset(this.username);
+        this.reset(this.email);
+        this.reset(this.subject);
+        this.reset(this.message);
+      },
+      sendMsg: function () {
+        this.sendMail({
+          name: username.value,
+          email: email.value,
+          subject: subject.value,
+          message: message.value,
+        }).then(
+          (result) => {
+            // console.log(result);
+            this.resetForm();
+            this.successMsg = true;
+            setTimeout(() => {
+              this.successMsg = false;
+            }, 3500);
+          },
+          (reason) => {
+            this.errorMsg = true;
+            setTimeout(() => {
+              this.errorMsg = false;
+            }, 3500);
+          }
+        );
+      },
+      sendMail: async function (params) {
+        // console.log(params);
+        const result = await fetch("/.netlify/functions/sendmail", {
+          method: "POST",
+
+          headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(params),
+        });
+        return result;
+      },
+    };
+  };
+</script>
